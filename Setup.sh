@@ -7,9 +7,9 @@ if [ "$EUID" -ne 0 ]
 fi
 
 #Clean home folder crontab mount shared host drive 
-rmdir ~/Music ~/Public ~/Videos ~/Templates ~/Desktop &>/dev/null
-mkdir ~/Shared/
-echo "@reboot /usr/bin/vmhgfs-fuse .host:/ ~/Shared/ -o subtype=vmhgfs-fuse,allow_other" >> /var/spool/cron/crontabs/root
+rmdir /home/kali/Music /home/kali/Public /home/kali/Videos /home/kali/Templates /home/kali/Desktop &>/dev/null
+mkdir /home/kali/Shared/
+echo "@reboot /usr/bin/vmhgfs-fuse .host:/ /home/kali/Shared/ -o subtype=vmhgfs-fuse,allow_other" >> /var/spool/cron/crontabs/root
 
 #Sudo with no password
 echo "kali ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
@@ -26,7 +26,7 @@ xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/s
 #xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /usr/share/backgrounds/kali/Kali.jpg
 
 #Remove qterminal transperancy
-sed -i 's/ApplicationTransparency=5/ApplicationTransparency=0/' ~/.config/qterminal.org/qterminal.ini
+sed -i 's/ApplicationTransparency=5/ApplicationTransparency=0/' /home/kali/.config/qterminal.org/qterminal.ini
 
 #Disable LLMNR
 echo '[Match]
@@ -37,7 +37,7 @@ LLMNR=no' > /etc/systemd/network/90-disable-llmnr.network
 #Set alias
 echo '\n#Alias
 alias cme="crackmapexec"
-alias ll="ls -lah"' >> ~/.zshrc
+alias ll="ls -lah"' >> /home/kali/.zshrc
 
 #Install some shit
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
