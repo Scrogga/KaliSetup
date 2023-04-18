@@ -23,7 +23,7 @@ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-on-ac -s 
 #Change the fucking terrible background
 wget -O /usr/share/backgrounds/kali/Kali.jpg https://raw.githubusercontent.com/Scrogga/KaliSetup/main/Kali.jpg
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s /usr/share/backgrounds/kali/Kali.jpg
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /usr/share/backgrounds/kali/Kali.jpg
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /usr/share/backgrounds/kali/Kali.jpg
 
 #Remove qterminal transperancy
 sed -i 's/ApplicationTransparency=5/ApplicationTransparency=0/' ~/.config/qterminal.org/qterminal.ini
