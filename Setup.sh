@@ -35,7 +35,7 @@ name=*
 LLMNR=no' > /etc/systemd/network/90-disable-llmnr.network
 
 #Set alias
-echo '\n#Alias
+echo '#Alias
 alias cme="crackmapexec"
 alias ll="ls -lah"' >> /home/kali/.zshrc
 
